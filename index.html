@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f2ec">
+    <meta name="description" content="Album kecil berisi momen-momen yang terlalu lucu untuk cuma disimpan di galeri.">
+    <title>little archive — album kecil kita</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="wordmark" href="#" aria-label="little archive, kembali ke atas">
+          <span class="wordmark__stamp" aria-hidden="true">l.</span>
+          <span>little archive<span class="wordmark__period">.</span></span>
+        </a>
+        <a class="topbar__note" href="#album">dibuat dari momen random <span aria-hidden="true">↘</span></a>
+        <a class="topbar__index" href="#tentang"><span class="status-dot"></span> edisi kecil no. 01</a>
+      </header>
+
+      <main>
+        <section class="intro" aria-labelledby="page-title">
+          <div class="intro__copy">
+            <p class="eyebrow"><span class="eyebrow__line"></span> sebuah album, bukan portofolio</p>
+            <h1 id="page-title">Kita, di sela-sela <em>yang biasa.</em></h1>
+            <p class="intro__text">Nggak ada plot twist. Cuma dua orang, outfit serasi, dan bukti bahwa duduk di rumput bisa jadi agenda seharian.</p>
+            <a class="text-link" href="#album">lihat-lihat dulu <span aria-hidden="true">↓</span></a>
+          </div>
+          <div class="intro__aside" aria-label="Catatan album">
+            <span class="aside-sparkle" aria-hidden="true">✳</span>
+            <p>dikurasi dengan<br>sedikit malu-malu</p>
+            <span class="aside-caption">3 foto · 1 duo favorit</span>
+          </div>
+          <span class="intro__scribble" aria-hidden="true">made of pixels & feelings</span>
+        </section>
+
+        <section class="album-section" id="album" aria-labelledby="album-title">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow"><span class="eyebrow__line"></span> koleksi 001</p>
+              <h2 id="album-title">Bukti kita <em>pernah di sini.</em></h2>
+            </div>
+            <p class="section-heading__count"><span id="photo-count">03</span> frame<br>dan banyak cerita</p>
+          </div>
+
+          <div class="music-player" aria-label="Pemutar musik">
+            <div class="music-player__art" aria-hidden="true">
+              <span class="music-player__disc"></span>
+              <span class="music-player__art-mark">l.</span>
+              <span class="music-player__sparkle music-player__sparkle--one">✳</span>
+              <span class="music-player__sparkle music-player__sparkle--two">✦</span>
+              <span class="music-player__sparkle music-player__sparkle--three">·</span>
+            </div>
+            <div class="music-player__main">
+              <div class="music-player__eyebrow"><span class="music-player__equalizer" aria-hidden="true"><i></i><i></i><i></i></span> soundtrack kecil kita</div>
+              <div class="music-player__songline">
+                <h3>One Less Lonely Girl</h3>
+                <span>Justin Bieber</span>
+              </div>
+              <div class="music-player__timeline">
+                <span id="music-current-time">0:00</span>
+                <input id="music-progress" type="range" min="0" max="0" step="0.1" value="0" aria-label="Posisi lagu" disabled>
+                <span id="music-duration">--:--</span>
+              </div>
+              <p class="music-player__status" id="music-status" role="status" aria-live="polite">tekan play kalau sudah siap</p>
+            </div>
+            <div class="music-player__controls">
+              <button class="music-player__play" id="music-play" type="button" aria-label="Putar musik">
+                <span id="music-play-icon" aria-hidden="true">▶</span>
+              </button>
+              <button class="music-player__mute" id="music-mute" type="button" aria-label="Bisukan musik" aria-pressed="false">♫</button>
+            </div>
+            <label class="music-player__volume" for="music-volume">
+              <span class="music-player__volume-label"><span aria-hidden="true">♫</span> volume</span>
+              <input id="music-volume" type="range" min="0" max="1" step="0.01" value="0.7" aria-label="Volume musik">
+              <output id="music-volume-value" for="music-volume">70%</output>
+            </label>
+            <audio id="album-audio" preload="metadata">
+              <source src="assets/album-soundtrack.mp3" type="audio/mpeg">
+              Browser kamu belum mendukung pemutar audio.
+            </audio>
+          </div>
+
+          <div class="toolbar">
+            <div class="filters" role="group" aria-label="Filter foto">
+              <button class="filter-chip is-active" type="button" data-filter="all" aria-pressed="true">semua <span>03</span></button>
+              <button class="filter-chip" type="button" data-filter="cozy" aria-pressed="false">soft hours <span>02</span></button>
+              <button class="filter-chip" type="button" data-filter="chaos" aria-pressed="false">chaos dikit <span>01</span></button>
+            </div>
+            <button class="shuffle-button" id="shuffle-button" type="button">
+              <span class="shuffle-icon" aria-hidden="true">⤨</span> pilihkan satu
+            </button>
+          </div>
+
+          <div class="photo-grid" id="photo-grid">
+            <article class="photo-card photo-card--feature" data-mood="cozy" data-index="0">
+              <button class="photo-card__image-button" type="button" aria-label="Buka foto 1: outfit serasi, mood berbeda">
+                <img src="assets/moment-01.png" alt="Dua avatar bermahkota dengan sweater merah hitam, berdiri di taman kotak-kotak." fetchpriority="high">
+                <span class="image-index">01 / 03</span>
+                <span class="image-open" aria-hidden="true">lihat dekat ↗</span>
+              </button>
+              <div class="photo-card__meta">
+                <div><p class="photo-card__label">soft launch hubungan dengan rumput</p><h3>Outfit serasi, mood berbeda.</h3></div>
+                <button class="heart-button" type="button" aria-label="Simpan foto favorit" aria-pressed="false"><span aria-hidden="true">♡</span></button>
+              </div>
+              <p class="photo-card__detail"><span>di taman · entah jam berapa</span><span class="photo-card__emoji" aria-hidden="true">♧</span></p>
+            </article>
+
+            <article class="photo-card" data-mood="chaos" data-index="1">
+              <button class="photo-card__image-button" type="button" aria-label="Buka foto 2: latar belakang dramatis, kami tetap santai">
+                <img src="assets/moment-02.png" alt="Dua avatar duduk bersama di bawah langit ungu dan biru malam." loading="lazy">
+                <span class="image-index">02 / 03</span>
+                <span class="image-open" aria-hidden="true">lihat dekat ↗</span>
+              </button>
+              <div class="photo-card__meta">
+                <div><p class="photo-card__label">drama di background saja</p><h3>Jam pulang? nggak kenal.</h3></div>
+                <button class="heart-button" type="button" aria-label="Simpan foto favorit" aria-pressed="false"><span aria-hidden="true">♡</span></button>
+              </div>
+              <p class="photo-card__detail"><span>server private · vibes publik</span><span class="photo-card__emoji" aria-hidden="true">☾</span></p>
+            </article>
+
+            <article class="photo-card" data-mood="cozy" data-index="2">
+              <button class="photo-card__image-button" type="button" aria-label="Buka foto 3: quality time di rumput">
+                <img src="assets/moment-03.png" alt="Satu avatar duduk di rumput sementara yang lain rebahan nyaman di sampingnya." loading="lazy">
+                <span class="image-index">03 / 03</span>
+                <span class="image-open" aria-hidden="true">lihat dekat ↗</span>
+              </button>
+              <div class="photo-card__meta">
+                <div><p class="photo-card__label">quality time level rebahan</p><h3>Ruang tamu? taman juga jadi.</h3></div>
+                <button class="heart-button" type="button" aria-label="Simpan foto favorit" aria-pressed="false"><span aria-hidden="true">♡</span></button>
+              </div>
+              <p class="photo-card__detail"><span>lokasi: rerumputan kesayangan</span><span class="photo-card__emoji" aria-hidden="true">♡</span></p>
+            </article>
+          </div>
+          <p class="empty-state" id="empty-state" hidden>Belum ada foto di kategori ini. Coba kategori lain, ya.</p>
+        </section>
+
+        <section class="note-section" id="tentang" aria-labelledby="note-title">
+          <div class="note-card">
+            <span class="note-card__seal" aria-hidden="true">✳</span>
+            <p class="eyebrow">catatan kecil dari admin album</p>
+            <h2 id="note-title">Nobody is perfect.<br><em>Except mungkin kita, pas lagi AFK.</em></h2>
+            <p>Tiga kenangan kecil, satu lagu, dan duo yang selalu punya cerita.</p>
+            <span class="note-card__signature">— pengarsip tidak resmi ♡</span>
+          </div>
+          <div class="footer-line">
+            <span>© little archive · dibuat dengan niat baik dan sedikit overthinking</span>
+            <a href="#page-title">balik ke atas ↑</a>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <dialog class="lightbox" id="lightbox" aria-label="Penampil foto">
+      <div class="lightbox__top">
+        <span class="lightbox__counter" id="lightbox-counter">01 / 03</span>
+        <button class="lightbox__close" type="button" aria-label="Tutup foto">×</button>
+      </div>
+      <button class="lightbox__arrow lightbox__arrow--prev" type="button" aria-label="Foto sebelumnya">←</button>
+      <figure class="lightbox__figure">
+        <img id="lightbox-image" src="assets/moment-01.png" alt="">
+        <figcaption id="lightbox-caption"></figcaption>
+      </figure>
+      <button class="lightbox__arrow lightbox__arrow--next" type="button" aria-label="Foto berikutnya">→</button>
+      <p class="lightbox__hint">pakai tombol ← → untuk pindah · esc untuk tutup</p>
+    </dialog>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
